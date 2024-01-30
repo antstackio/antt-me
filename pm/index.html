@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="author"
+      content="EnBizCard - An Open-Source Digital Business Card Generator"
+    />
+    <meta name="url" content="https://enbizcard.vishnuraghav.com/" />
+    <meta name="designer" content="Vishnu Raghav" />
+    <meta property="og:title" content="Prashanth Manikyarajaiah's Digital Business Card" />
+    <meta
+      property="twitter:title"
+      content="Prashanth Manikyarajaiah's Digital Business Card"
+    />
+    <script>
+      "http" == window.location.href.substr(0, 4) &&
+        "/" != window.location.href.slice(-1) &&
+        window.location.replace(window.location.href + "/");
+    </script>
+    <!---->
+    <title>Prashanth Manikyarajaiah's Digital Business Card</title>
+    <style>
+      #body {
+        font-family: sans-serif;
+      }
+
+      input[type="range"]::-moz-range-track {
+        background: none;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        border: none;
+        background: #042582;
+        z-index: 3;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        border: none;
+        background: #042582;
+        z-index: 3;
+        cursor: pointer;
+      }
+
+      .closeColor {
+        filter: invert(1);
+      }
+
+      .topAction {
+      }
+
+      .iconColor {
+        color: #eee;
+      }
+
+      .cardColor {
+        color: #222 !important;
+      }
+
+      .textColor {
+        color: #222 !important;
+      }
+
+      .seekbarColor {
+        background: #04258280 !important;
+      }
+    </style>
+    <!---->
+    <!---->
+    <link rel="stylesheet" href="../style.min.css" />
+  </head>
+
+  <body id="body">
+    <div id="page">
+    <div
+      id="modal"
+      style="
+        background-color: rgb(221, 221, 221);
+        visibility: hidden;
+        top: 2rem;
+        opacity: 0;
+      "
+    >
+      <a id="close" class="closeColor">
+        <div class="icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            style="
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-miterlimit: 2;
+            "
+          >
+            <path style="fill: none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M18 6 6 18M6 6l12 12"
+              style="
+                fill: none;
+                fill-rule: nonzero;
+                stroke: #fff;
+                stroke-width: 2px;
+              "
+            ></path>
+          </svg>
+        </div>
+      </a>
+      <div id="keyView">
+        <p class="textColor">Use my public key to send me encrypted messages</p>
+        <a
+          download=""
+          target="_blank"
+          id="dlKey"
+          rel="noreferrer"
+          tabindex="-1"
+          style="background-color: rgb(4, 37, 130)"
+          href="./Prashanth Manikyarajaiah's public key.asc"
+        >
+          <div class="icon iconColor">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xml:space="preserve"
+              style="
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 2;
+              "
+            >
+              <path style="fill: none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M21 15v4c0 1.097-.903 2-2 2H5c-1.097 0-2-.903-2-2v-4m4-5 5 5 5-5m-5 5V3"
+                style="
+                  fill: none;
+                  fill-rule: nonzero;
+                  stroke: #fff;
+                  stroke-width: 2px;
+                "
+              ></path>
+            </svg>
+          </div>
+          <span class="iconColor">Download Key</span>
+        </a>
+      </div>
+      <div id="copyView">
+        <p class="textColor">Copy and send the URL to share my Business Card</p>
+        <button id="copyURL" style="background-color: rgb(4, 37, 130)">
+          <div class="icon iconColor">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xml:space="preserve"
+              style="
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 2;
+              "
+            >
+              <path style="fill: none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M22 11a2 2 0 0 0-2-2h-9a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-9Z"
+                style="fill: none; stroke: #fff; stroke-width: 2px"
+              ></path>
+              <path
+                d="M5 15H4c-1.097 0-2-.903-2-2V4c0-1.097.903-2 2-2h9c1.097 0 2 .903 2 2v1"
+                style="
+                  fill: none;
+                  fill-rule: nonzero;
+                  stroke: #fff;
+                  stroke-width: 2px;
+                "
+              ></path>
+            </svg>
+          </div>
+          <span class="iconColor">Copy URL</span>
+        </button>
+      </div>
+      <div id="qrView" class="textColor">
+        <div id="qr"></div>
+        <h3>Scan the QR Code</h3>
+        <p>to view my Business Card on another device</p>
+      </div>
+    </div>
+    <header>
+      <div class="headerImgC">
+        <!-- <img id="cover" src="./cover.png" alt="Background Pattern" /> -->
+        <img
+          id="logo"
+          src="../images/white-Logo.svg"
+          alt="Logo"
+          style="margin: 3rem 0px 6rem"
+        />
+      </div>
+    </header>
+    <main>
+      <div class="frostCard">
+        <div class="profileInfo">
+          <div class="profileImgs">
+            <img id="profilePhoto" src="./dp.png" alt="Photo" />
+            <!-- <img
+              id="profilePhoto"
+              class="badge"
+              src="./spacialBadge.png"
+              alt="Photo"
+            /> -->
+          </div>
+          <div id="info" class="textColor">
+            <p class="name">Prashanth Manikyarajaiah</p>
+            <!---->
+            <p class="jobtitle">Head of Customer Success, AntStack</p>
+            <!---->
+          </div>
+        </div>
+        <div id="topActions">
+          <a id="share">
+            <img src="../images/share.svg" />
+          </a>
+          <a id="showQR">
+            <img src="../images/qr.svg" />
+          </a>
+          <a
+            id="cta"
+            rel="noreferrer"
+            download=""
+            target="_blank"
+            aria-label="Save Contact"
+            href="pm.vcf"
+          >
+            <img src="../images/contact.svg" />
+            <p class="iconColor">Save Contact</p>
+          </a>
+          <!---->
+        </div>
+      </div>
+      <!-- <p class="sub textColor">Leading the Serverless Revolution 🚀</p> -->
+      <div class="actions">
+        <div class="actionsC">
+          <div class="actionBtn">
+            <a
+              href="tel:+919880674463"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Mobile"
+            >
+              <img src="../images/phone.svg" />
+            </a>
+            <p class="textColor">Mobile</p>
+          </div>
+        </div>
+        <div class="actionsC">
+          <div class="actionBtn">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              href="mailto:pm@antstack.com"
+              aria-label="Mobile"
+            >
+              <img src="../images/email.svg" />
+            </a>
+            <p class="textColor">Email</p>
+          </div>
+        </div>
+        <div class="actionsC">
+          <div class="actionBtn">
+            <a
+              href="https://antstack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Website"
+              aria-label="Mobile"
+            >
+              <img src="../images/web.svg" />
+            </a>
+            <p class="textColor">Website</p>
+          </div>
+        </div>
+      </div>
+      <div class="actions secondary">
+        <div class="actionsC">
+          <div class="actionBtn secBtn">
+            <a
+              href="https://linkedin.com/in/prashanthm"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              aria-label="Mobile"
+              >
+                <img src="../images/linkedin.svg" />
+              </a>
+              <p class="textColor">linkedin</p>
+            </a>
+          </div>
+        </div>
+        <div class="actionsC">
+          <div class="actionBtn secBtn">
+            <a
+              href="https://twitter.com/payaniga"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              aria-label="Mobile"
+              >
+                <img src="../images/twitterX.svg" />
+              </a>
+              <p class="textColor">x.com</p>
+            </a>
+          </div>
+        </div>
+        <div class="actionsC">
+          <div class="actionBtn secBtn">
+            <a
+              href="https://youtube.com/@AntStack"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              aria-label="Mobile"
+              >
+                <img src="../images/youtube.svg" />
+              </a>
+              <p class="textColor">YouTube</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!---->
+    <script src="../qrcode.min.js"></script>
+    <script>
+      let m = document.getElementById("modal"),
+        c = document.getElementById("close"),
+        ki = document.getElementById("keyView"),
+        cv = document.getElementById("copyView"),
+        curl = document.getElementById("copyURL"),
+        qrv = document.getElementById("qrView"),
+        qr = document.getElementById("qr"),
+        s = document.getElementById("share"),
+        sqr = document.getElementById("showQR"),
+        sk = document.getElementById("showKey");
+      function tC(e) {
+        "2rem" == e.style.top
+          ? ((e.style.visibility = "visible"),
+            (e.style.top = "0px"),
+            (e.style.opacity = 1))
+          : ((e.style.top = "2rem"),
+            (e.style.opacity = 0),
+            setTimeout(() => {
+              e.style.visibility = "hidden";
+            }, 200));
+      }
+      function dN(e) {
+        e.style.display = "none";
+      }
+      window.addEventListener("load", () => {
+        (document.querySelector("#topActions").style.display = "flex"),
+          (qr.innerHTML = new QRCode({
+            content: window.location.href,
+            container: "svg-viewbox",
+            join: !0,
+            ecl: "L",
+            padding: 0,
+          }).svg());
+      }),
+        navigator.canShare
+          ? s.addEventListener("click", () => {
+              navigator.share({
+                title: document.title,
+                text: "You can view my Digital Business Card here:",
+                url: window.location.href,
+              });
+            })
+          : s.addEventListener("click", () => {
+              tC(m), (cv.style.display = "flex"), dN(qrv), ki && dN(ki);
+            }),
+        sqr.addEventListener("click", () => {
+          tC(m), (qrv.style.display = "block"), dN(cv), ki && dN(ki);
+        }),
+        sk &&
+          sk.addEventListener("click", () => {
+            tC(m), ki && (ki.style.display = "flex"), dN(cv), dN(qrv);
+          }),
+        c.addEventListener("click", () => tC(m)),
+        curl.addEventListener("click", async () => {
+          let e = curl.querySelectorAll(".iconColor")[1];
+          await navigator.clipboard
+            .writeText(window.location.href)
+            .then((t) => {
+              (e.innerText = "Copied"),
+                setTimeout(() => {
+                  e.innerText = "Copy URL";
+                }, 1e3);
+            });
+        });
+    </script>
+    </div>
+  </body>
+</html>
